@@ -28,7 +28,9 @@ fs.readdir("./events/", (err, files) => {
         client.on(eventName, event.bind(null, client));
     });
 });
-
+client.on("ready",()=>{
+  console.log("ready")
+})
 fs.readdir("./commands/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(f => {
